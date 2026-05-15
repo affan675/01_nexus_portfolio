@@ -1,0 +1,153 @@
+/* css/responsive.css */
+/* Responsive design for tablets (768px) and mobile (480px) */
+
+/* ==============================
+   TABLET - max-width 768px
+   ============================== */
+@media (max-width: 768px) {
+  /* Adjust section padding */
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  /* Hero min-height reduce */
+  #home.hero {
+    min-height: 90vh;
+  }
+  .hero-title {
+    font-size: var(--text-2xl);
+  }
+
+  /* Navbar: show hamburger, hide full menu by default */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--surface);
+    transition: right var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+  }
+
+  /* Show menu when checkbox checked */
+  #nav-toggle:checked ~ .nav-menu {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--space-xl);
+    text-align: center;
+    padding: var(--space-2xl);
+  }
+
+  .nav-link {
+    font-size: var(--text-lg);
+  }
+
+  /* Hamburger positioned absolutely relative to navbar */
+  .navbar-inner {
+    position: relative;
+  }
+
+  /* Hamburger label will be in navbar-inner, but checkbox is before it. Need to ensure label is visible */
+  .hamburger {
+    order: 1;
+  }
+
+  /* Adjust grid to one column on small tablets */
+  .skills-grid,
+  .projects-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  /* Ensure logo doesn't shrink */
+  .logo-box {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ==============================
+   MOBILE - max-width 480px
+   ============================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  #home.hero {
+    min-height: 85vh;
+  }
+
+  .hero-title {
+    font-size: var(--text-xl);
+  }
+  .hero-subtitle {
+    font-size: var(--text-sm);
+  }
+
+  /* Reduce card padding */
+  .surface-card {
+    padding: var(--space-lg);
+  }
+
+  /* Buttons full width on mobile */
+  .btn {
+    width: 100%;
+  }
+
+  /* Navbar height smaller */
+  .navbar-inner {
+    height: 60px;
+  }
+
+  .hamburger-line {
+    width: 22px;
+    height: 2px;
+  }
+
+  .logo-box {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* Avatar smaller */
+  .avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  /* Contact info text center */
+  .contact-info {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-size: var(--text-xs);
+  }
+}

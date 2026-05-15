@@ -1,0 +1,160 @@
+/* css/animations.css */
+/* Keyframes, transitions, preloader, scroll reveals, custom cursor hiding */
+
+/* ====== Keyframes ====== */
+
+/* Preloader logo stroke draw */
+@keyframes draw-stroke {
+  0% {
+    stroke-dashoffset: 200;
+    stroke-dasharray: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 200;
+  }
+}
+
+/* Preloader shimmer */
+@keyframes shimmer {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+/* Fade out */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Hero pulse (for tab return) */
+@keyframes heroPulse {
+  0% { opacity: 0.7; transform: scale(0.99); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+
+/* Float up with fade for scroll reveals */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Spin for theme toggle icon */
+@keyframes spinOnce {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ====== Preloader Styles ====== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.preloader-logo {
+  width: 130px;
+  height: 75px;
+  color: var(--accent);
+}
+.logo-stroke {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-stroke 1.2s ease-in-out forwards;
+}
+
+/* Shimmer progress bar */
+.progress-bar {
+  width: 200px;
+  height: 4px;
+  background-color: var(--surface);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.progress-shimmer {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent) 50%,
+    transparent 100%);
+  animation: shimmer 1s infinite linear;
+}
+
+/* Fade out class for preloader */
+.preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ====== Scroll Animations ====== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children within a container */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stagger-children.reveal-children > * {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.stagger-children.reveal-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children.reveal-children > *:nth-child(2) { animation-delay: 0.15s; }
+.stagger-children.reveal-children > *:nth-child(3) { animation-delay: 0.25s; }
+.stagger-children.reveal-children > *:nth-child(4) { animation-delay: 0.35s; }
+.stagger-children.reveal-children > *:nth-child(5) { animation-delay: 0.45s; }
+
+/* ====== Hero pulse (triggered via JS) ====== */
+.hero.attention-pulse {
+  animation: heroPulse 1s ease;
+}
+
+/* ====== Theme Toggle Icon Spin ====== */
+.theme-toggle:active .theme-icon {
+  animation: spinOnce 0.4s ease;
+}
+
+/* ====== Hide custom cursor on touch devices ====== */
+@media (any-pointer: coarse) {
+  #custom-cursor,
+  .cursor-dot,
+  .cursor-trail {
+    display: none !important;
+  }
+}
