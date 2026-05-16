@@ -37,7 +37,7 @@
 
 ## 🚀 Live Demo
 
-> **Live Demo:** https://affan675.github.io/02_password_manager/
+> **Live Demo:** https://affan675.github.io/01_nexus_portfolio/
 
 ---
 
