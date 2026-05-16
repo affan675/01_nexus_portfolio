@@ -5,7 +5,7 @@
 ### A Modern, Production-Ready Portfolio Website  
 **Built with Pure HTML, CSS & Vanilla JavaScript**
 
-[View Live](#-live-demo) · [Documentation](#-documentation) · [Report Bug](https://github.com/affanadil/nexus-portfolio/issues) · [Contribute](#-contributing)
+[View Live](#-live-demo) · [Documentation](#-documentation) · [Report Bug](https://github.com/affan675/01_nexus_portfolio/issues) · [Contribute](#-contributing)
 
 </div>
 
@@ -37,7 +37,7 @@
 
 ## 🚀 Live Demo
 
-> **Live Demo:** Coming Soon!
+> **Live Demo:** https://affan675.github.io/02_password_manager/
 
 ---
 
@@ -111,7 +111,7 @@
 
 ```bash
 # Option 1: Clone the repository
-git clone https://github.com/affanadil/nexus-portfolio.git
+git clone https://github.com/affan675/01_nexus_portfolio.git
 cd nexus-portfolio
 
 # Option 2: Download as ZIP
@@ -325,8 +325,8 @@ You're free to use this project for personal, commercial, or educational purpose
 **Affan Adil**
 - 🎓 IITian, Polymath & Full-Stack Developer
 - 💼 Building digital products that ship
-- 🔗 [GitHub](https://github.com/affanadil)
-- 📧 [Email](mailto:affan@example.com)
+- 🔗 [GitHub](https://github.com/affan675)
+- 📧 [Email](mailto:affanadil119@google.com)
 
 ---
 
